@@ -13,6 +13,8 @@ public class MyPoint {
     int a = 0, b = 0;
     Class<?> clazz = object.getClass();
     Method[] methods = clazz.getMethods();
+    //Херовый код внизу призван отслеживать какая перменная Инкрементирована
+    //В целях сохранения ихначальной логики вывода
     for (Method method : methods) {
       if (method.isAnnotationPresent(Incrementation.class)) {
         if (method.getName().equals("getX")) {
@@ -26,7 +28,6 @@ public class MyPoint {
       }
     }
     System.out.println("[" + a + "," + b + "]");
-    //Изменил способ вывода, что бы не нарущать логику работы лабы.
   }
 
   @Incrementation
